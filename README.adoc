@@ -3,7 +3,7 @@
 //graph example description
 :description: Blank Sandbox. Load your own data with LOAD CSV or create data from scratch.
 //icon representing graph example
-:icon: 
+:icon: /resources/graph-icon-green.png
 //associated search tags, separate multiple tags with comma
 :tags: 
 //graph example author
@@ -25,6 +25,8 @@
 :rendered-guide: https://guides.neo4j.com/sandbox/blank-sandbox/index.html
 //guide for modelling decisions. Should be friendly enough to be converted into various document formats
 :model-guide:
+
+image::{icon}[]
 
 = {name} Graph Example
 
