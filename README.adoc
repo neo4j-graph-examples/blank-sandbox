@@ -3,7 +3,9 @@
 //graph example description
 :description: Blank Sandbox. Load your own data with LOAD CSV or create data from scratch.
 //icon representing graph example
-:icon: /resources/graph-icon-green.png
+:icon: 
+//logo if available
+:logo: /resources/graph-icon-green.png
 //associated search tags, separate multiple tags with comma
 :tags: 
 //graph example author
@@ -26,7 +28,7 @@
 //guide for modelling decisions. Should be friendly enough to be converted into various document formats
 :model-guide:
 
-image::{icon}[]
+image::{logo}[]
 
 = {name} Graph Example
 
