@@ -1,0 +1,12 @@
+{
+    "name": "blank-sandbox",
+    "description":"Blank Sandbox. Load your own data with LOAD CSV or create data from scratch",
+    "install": [
+        {
+            "targetNeo4jVersion":"3.5"
+        },
+        {
+            "targetNeo4jVersion": "^4.0"
+        }
+    ]
+}
