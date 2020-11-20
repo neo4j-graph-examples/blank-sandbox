@@ -3,7 +3,7 @@
 :description: Blank Sandbox. Load your own data with LOAD CSV or create data from scratch
 :icon: 
 :logo: documentation/img/graph-icon-green.png
-:tags: blank,custom-data,blank-sandbox
+:tags: blank,custom-data,blank-sandbox,neo4j-playground
 :author: Neo4j
 :use-load-script:
 :data:
