@@ -1,26 +1,22 @@
-// Download Java Driver: http://search.maven.org/#artifactdetails|org.neo4j.driver|neo4j-java-driver|1.0.0|jar
+// npm install --save neo4j-driver
+var neo4j = require('neo4j-driver');
+var driver = neo4j.driver('bolt://<HOST>:<BOLTPORT>', neo4j.auth.basic('<USERNAME>', '<PASSWORD>'));
 
-import org.neo4j.driver.v1.*;
-import static org.neo4j.driver.v1.Values.parameters;
+var query = 
+  "MATCH (n) \
+   RETURN ID(n) as id \
+   LIMIT $limit";
 
-import java.util.List;
-import static java.util.Arrays.asList;
-import static java.util.Collections.singletonMap;
+var params = {"limit": 10};
 
-public class BlankSandbox {
+var session = driver.session();
 
-    public static void main(String...args) {
-        Config noSSL = Config.build().withEncryptionLevel(Config.EncryptionLevel.NONE).toConfig();
-        Driver driver = GraphDatabase.driver("bolt://<HOST>:<BOLTPORT>",AuthTokens.basic("<USERNAME>","<PASSWORD>"),noSSL); // <password>
-        try (Session session = driver.session()) {
-            String cypherQuery =
-                "MATCH (n) " + 
-                "RETURN id(n) AS id";
-            StatementResult result = session.run(cypherQuery, parameters());
-            while (result.hasNext()) {
-                System.out.println(result.next().get("id"));
-            }
-        }
-    }
-}
-
+session.run(query, params)
+  .then(function(result) {
+    result.records.forEach(function(record) {
+        console.log(record.get('id'));
+    })
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
