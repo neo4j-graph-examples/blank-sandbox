@@ -17,12 +17,14 @@
 :model:
 :example:
 
-:query:
+:query: MATCH (n) +
+RETURN COUNT(n) AS count +
+LIMIT $limit +
 
-:param-name:
-:param-value:
-:result-column:
-:expected-result:
+:param-name: limit
+:param-value: 10
+:result-column: count
+:expected-result: 0
 
 :todo: false
 image::{icon}[width=100]
