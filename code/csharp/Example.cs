@@ -18,8 +18,8 @@ namespace dotnet {
 
     var cypherQuery =
       @"
-      MATCH (n)
-      RETURN COUNT(n) AS count
+      MATCH (n) 
+      RETURN COUNT(n) AS count 
       LIMIT $limit
       ";
 
