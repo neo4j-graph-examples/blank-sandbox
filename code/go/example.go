@@ -30,8 +30,8 @@ func runQuery(uri, database, username, password string) (result []string, err er
 	results, err := session.ReadTransaction(func(transaction neo4j.Transaction) (interface{}, error) {
 		result, err := transaction.Run(
 			`
-			MATCH (n)
-			RETURN COUNT(n) AS count
+			MATCH (n) 
+			RETURN COUNT(n) AS count 
 			LIMIT $limit
 			`, map[string]interface{}{
 				"limit": "10",

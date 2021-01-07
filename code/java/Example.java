@@ -17,8 +17,8 @@ public class Example {
     try (Session session = driver.session(SessionConfig.forDatabase("neo4j"))) {
 
       String cypherQuery =
-        "MATCH (n)" +
-        "RETURN COUNT(n) AS count" +
+        "MATCH (n) " +
+        "RETURN COUNT(n) AS count " +
         "LIMIT $limit";
 
       var result = session.readTransaction(

@@ -7,8 +7,8 @@ const driver = neo4j.driver('bolt://<HOST>:<BOLTPORT>',
 
 const query =
   `
-  MATCH (n)
-  RETURN COUNT(n) AS count
+  MATCH (n) 
+  RETURN COUNT(n) AS count 
   LIMIT $limit
   `;
 

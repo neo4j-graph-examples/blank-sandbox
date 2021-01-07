@@ -8,8 +8,8 @@ driver = GraphDatabase.driver(
   auth=basic_auth("<USERNAME>", "<PASSWORD>"))
 
 cypher_query = '''
-MATCH (n)
-RETURN COUNT(n) AS count
+MATCH (n) 
+RETURN COUNT(n) AS count 
 LIMIT $limit
 '''
 
