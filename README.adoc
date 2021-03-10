@@ -17,15 +17,6 @@
 :model:
 :example:
 
-:query: MATCH (n) +
-RETURN COUNT(n) AS count +
-LIMIT $limit +
-
-:param-name: limit
-:param-value: 10
-:result-column: count
-:expected-result: 0
-
 :todo: false
 image::{icon}[width=100]
 
@@ -43,9 +34,11 @@ image::{model}[]
 image::{example}[width=600]
 
 .Example Query:
-[source,cypher,subs=attributes]
+[source,cypher,role=query-example,param-name=limit,param-value=10,result-column=count,expected-result=0]
 ----
-{query}
+MATCH (n)
+RETURN COUNT(n) AS count
+LIMIT $limit
 ----
 
 === Setup
